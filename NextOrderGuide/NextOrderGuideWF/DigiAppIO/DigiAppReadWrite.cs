@@ -13,7 +13,8 @@ namespace NextOrderGuide.DigiAppIO
         public static void writeXML(DigiApp da)
         {
             XmlSerializer writer = new XmlSerializer(typeof(DigiApp));
-            var path = "digiapp.xml";
+            var path = "digiappPs4.xml";
+            //var path = @"C:\Users\sirtu\Desktop\next order\digiappPs4.xml";
             System.IO.FileStream file = System.IO.File.Create(path);
             writer.Serialize(file, da);
             file.Close();
@@ -22,7 +23,7 @@ namespace NextOrderGuide.DigiAppIO
         public static DigiApp readXML()
         {
             XmlSerializer reader = new XmlSerializer(typeof(DigiApp));
-            var path = @"digiapp.xml";
+            var path = @"digiappPs4.xml";
             System.IO.StreamReader file = new System.IO.StreamReader(path);
             DigiApp da = (DigiApp)reader.Deserialize(file);
             file.Close();
